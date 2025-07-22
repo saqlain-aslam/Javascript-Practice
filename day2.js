@@ -41,3 +41,28 @@ for (let index = 0; index < length; index++) {
 }
 
 console.log(`Dynamic Array is: ${arr2}`);
+
+// Problem 3
+// Replace the two index of an array and the index position will be selected by the user.
+
+let arr3 = [2, 5, 7, 8, 9, 5];
+
+let index1 = parseInt(prompt(`Enter first element:`));
+let index2 = parseInt(prompt(`Enter second element:`));
+
+if (
+  isNaN(index1) ||
+  isNaN(index2) ||
+  index1 < 0 ||
+  index2 < 0 ||
+  index1 > arr3.length ||
+  index2 > arr3.length
+) {
+  console.log(`Your index does not exist`);
+} else {
+  let temp1 = arr3[index1];
+  arr3[index1] = arr3[index2];
+  arr3[index2] = temp1;
+
+  console.log(`New array after swap is: ${arr3}`);
+}
