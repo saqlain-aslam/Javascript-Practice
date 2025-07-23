@@ -66,3 +66,27 @@ if (
 
   console.log(`New array after swap is: ${arr3}`);
 }
+
+// Problem 4
+// check in the array which no is repeating first.
+let arr4 = [2, 5, 7, 8, 9, 5];
+
+let index4 = parseInt(prompt(`Enter first element:`));
+let index5 = parseInt(prompt(`Enter second element:`));
+
+if (
+  isNaN(index1) ||
+  isNaN(index2) ||
+  index1 < 0 ||
+  index2 < 0 ||
+  index1 > arr3.length ||
+  index2 > arr3.length
+) {
+  console.log(`Your index does not exist`);
+} else {
+  let temp1 = arr3[index1];
+  arr3[index1] = arr3[index2];
+  arr3[index2] = temp1;
+
+  console.log(`New array after swap is: ${arr3}`);
+}
