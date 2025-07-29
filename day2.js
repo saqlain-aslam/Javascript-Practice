@@ -32,61 +32,58 @@ console.log(arr1);
 // Make the length of array dynamic and take the inputs and length of array from the user
 
 //solution
-let length = parseInt(prompt("Enter the length of the array:"));
-let arr2 = [];
+// let length = parseInt(prompt("Enter the length of the array:"));
+// let arr2 = [];
 
-for (let index = 0; index < length; index++) {
-  let input = prompt(`Enter elemen ${index + 1}:`);
-  arr2.push(input);
-}
+// for (let index = 0; index < length; index++) {
+//   let input = prompt(`Enter elemen ${index + 1}:`);
+//   arr2.push(input);
+// }
 
-console.log(`Dynamic Array is: ${arr2}`);
+// console.log(`Dynamic Array is: ${arr2}`);
 
 // Problem 3
 // Replace the two index of an array and the index position will be selected by the user.
 
-let arr3 = [2, 5, 7, 8, 9, 5];
+// let arr3 = [2, 5, 7, 8, 9, 5];
 
-let index1 = parseInt(prompt(`Enter first element:`));
-let index2 = parseInt(prompt(`Enter second element:`));
+// let index1 = parseInt(prompt(`Enter first element:`));
+// let index2 = parseInt(prompt(`Enter second element:`));
 
-if (
-  isNaN(index1) ||
-  isNaN(index2) ||
-  index1 < 0 ||
-  index2 < 0 ||
-  index1 > arr3.length ||
-  index2 > arr3.length
-) {
-  console.log(`Your index does not exist`);
-} else {
-  let temp1 = arr3[index1];
-  arr3[index1] = arr3[index2];
-  arr3[index2] = temp1;
+// if (
+//   isNaN(index1) ||
+//   isNaN(index2) ||
+//   index1 < 0 ||
+//   index2 < 0 ||
+//   index1 > arr3.length ||
+//   index2 > arr3.length
+// ) {
+//   console.log(`Your index does not exist`);
+// } else {
+//   let temp1 = arr3[index1];
+//   arr3[index1] = arr3[index2];
+//   arr3[index2] = temp1;
 
-  console.log(`New array after swap is: ${arr3}`);
-}
+//   console.log(`New array after swap is: ${arr3}`);
+// }
 
 // Problem 4
 // check in the array which no is repeating first.
-let arr4 = [2, 5, 7, 8, 9, 5];
 
-let index4 = parseInt(prompt(`Enter first element:`));
-let index5 = parseInt(prompt(`Enter second element:`));
+function firstRepeatingElement(arr) {
+  let seen = new Set();
 
-if (
-  isNaN(index1) ||
-  isNaN(index2) ||
-  index1 < 0 ||
-  index2 < 0 ||
-  index1 > arr3.length ||
-  index2 > arr3.length
-) {
-  console.log(`Your index does not exist`);
-} else {
-  let temp1 = arr3[index1];
-  arr3[index1] = arr3[index2];
-  arr3[index2] = temp1;
+  for (let i = 0; i < arr.length; i++) {
+    if (seen.has(arr[i])) {
+      console.log("Numeber already exists:", arr[i]);
+      return arr[i];
+    }
+    seen.add(arr[i]);
 
-  console.log(`New array after swap is: ${arr3}`);
+  }
+  return null;
 }
+
+let arr4 = [2, 3, 4, 5, 6, 2, 8, 9];
+const firstRepeatingNumber = firstRepeatingElement(arr4);
+console.log(`First repeating number is: ${firstRepeatingNumber}`);
