@@ -87,3 +87,5 @@ function firstRepeatingElement(arr) {
 let arr4 = [2, 3, 4, 5, 6, 2, 8, 9];
 const firstRepeatingNumber = firstRepeatingElement(arr4);
 console.log(`First repeating number is: ${firstRepeatingNumber}`);
+
+
